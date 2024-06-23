@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPanePrincipal" prefHeight="678.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mipropiaerp.HelloController">
+
+    <Tab fx:id="InventarioTab" closable="false" text="Inventarios">
+        <AnchorPane prefHeight="360.0" prefWidth="600.0" style="-fx-background-color: #7e4ea2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+         <ImageView fitHeight="655.0" fitWidth="972.0" layoutX="-2.0" layoutY="-2.0">
+            <image>
+               <Image url="@Fotos/fondo.jpg" />
+            </image>
+         </ImageView>
+            <TableView fx:id="tablaInventarios" layoutX="27.0" layoutY="54.0" prefHeight="554.0" prefWidth="525.0" style="-fx-background-color: #dac7eb;">
+                <columns>
+               <TableColumn fx:id="colIDProdInvent" prefWidth="88.00000154972076" text="idProd" />
+                    <TableColumn fx:id="colNombreInvent" prefWidth="88.00000154972076" text="Nombre" />
+                    <TableColumn fx:id="colDescripcionInvent" prefWidth="143.2000274658203" text="Descripción" />
+                    <TableColumn fx:id="colPrecioInvent" prefWidth="92.79998779296875" text="Precio" />
+                    <TableColumn fx:id="colCantidadInvent" prefWidth="111.199951171875" text="Cantidad en Stock" />
+                </columns>
+            </TableView>
+
+            <Button fx:id="BotonAgregarProducto" layoutX="570.0" layoutY="450.0" prefHeight="46.0" prefWidth="170.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: white;" text="AGREGAR PRODUCTO" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="BotonEliminarProducto" layoutX="760.0" layoutY="520.0" prefHeight="46.0" prefWidth="186.0" style="-fx-background-color: #5a3672; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="ELIMINAR PRODUCTO" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="BotonActualizarProducto" layoutX="760.0" layoutY="450.0" onAction="#actualizarProducto" prefHeight="46.0" prefWidth="197.0" style="-fx-background-color: #5a3672; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="ACTUALIZAR PRODUCTO" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+         <Label layoutX="590.0" layoutY="146.0" prefHeight="26.0" prefWidth="65.0" text="Nombre" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldNombreProducto" layoutX="587.0" layoutY="173.0" prefHeight="26.0" prefWidth="346.0" promptText="Nombre del producto" />
+         <TextArea fx:id="AreaDescripcionProducto" layoutX="689.0" layoutY="211.0" prefHeight="74.0" prefWidth="244.0" promptText="Descripción del producto..." />
+         <TextField fx:id="TextFieldPreciProducto" layoutX="591.0" layoutY="318.0" prefHeight="26.0" prefWidth="343.0" promptText="Precio del producto" />
+         <TextField fx:id="TextFieldCantidadProducto" layoutX="591.0" layoutY="397.0" prefHeight="26.0" prefWidth="344.0" promptText="Stock del producto" />
+         <Label layoutX="590.0" layoutY="211.0" prefHeight="26.0" prefWidth="98.0" text="Descripción" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="590.0" layoutY="291.0" prefHeight="26.0" prefWidth="98.0" text="Precio" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="591.0" layoutY="370.0" prefHeight="26.0" prefWidth="147.0" text="Cantidad en stock" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="692.0" layoutY="88.0" prefHeight="48.0" prefWidth="166.0" style="-fx-background-color: #bd99d9;" text="   INVENTARIO" textFill="WHITE">
+            <font>
+               <Font name="Georgia Pro Black" size="18.0" />
+            </font>
+         </Label>
+         <Button fx:id="BotonLimpiarProducto" layoutX="570.0" layoutY="520.0" onAction="#limpiarCamposProducto" prefHeight="46.0" prefWidth="171.0" style="-fx-background-color: #8351a8; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="LIMPIAR CAMPOS" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+        </AnchorPane>
+    </Tab>
+
+    <Tab fx:id="ClientesTab" closable="false" text="Clientes">
+        <AnchorPane prefHeight="691.0" prefWidth="964.0" style="-fx-background-color: #7e4ea2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+         <ImageView fitHeight="655.0" fitWidth="972.0">
+            <image>
+               <Image url="@Fotos/fondo.jpg" />
+            </image>
+         </ImageView>
+            <TableView fx:id="tablaClientes" layoutX="56.0" layoutY="99.0" prefHeight="351.0" prefWidth="506.0" style="-fx-background-color: #dac7eb;">
+                <columns>
+               <TableColumn fx:id="colDNIClient" prefWidth="89.60000228881836" text="DNI" />
+                    <TableColumn fx:id="colNombreClient" prefWidth="99.20001220703125" text="Nombre" />
+               <TableColumn fx:id="colIDClient" prefWidth="96.0" text="ClienteID" />
+                    <TableColumn fx:id="colTelefonoClient" prefWidth="108.00004577636719" text="Contacto" />
+                    <TableColumn fx:id="colDireccionClient" prefWidth="110.39996337890625" text="Dirección" />
+                </columns>
+            </TableView>
+
+            <Button fx:id="BotonRegistrarCliente" layoutX="607.0" layoutY="443.0" onAction="#registrarCliente" prefHeight="50.0" prefWidth="154.0" style="-fx-background-color: #5a3672; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="REGISTRAR CLIENTE" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="BotonEliminarCliente" layoutX="781.0" layoutY="523.0" onAction="#eliminarCliente" prefHeight="50.0" prefWidth="162.0" style="-fx-background-color: #5a3672; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="ELIMINAR CLIENTE" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+         <Button fx:id="BotonEditarCliente" layoutX="787.0" layoutY="443.0" onAction="#editarCliente" prefHeight="49.0" prefWidth="150.0" style="-fx-background-color: #5a3672; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="EDITAR CLIENTE" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         <Label layoutX="628.0" layoutY="172.0" text="Nombre" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldNombreClient" layoutX="624.0" layoutY="198.0" prefHeight="26.0" prefWidth="278.0" promptText="Nombre del cliente" />
+         <Label layoutX="624.0" layoutY="360.0" text="Dirección" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldDirectClient" layoutX="623.0" layoutY="386.0" prefHeight="26.0" prefWidth="281.0" promptText="Dirección del cliente" />
+         <Label layoutX="627.0" layoutY="296.0" text="Teléfono" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldTelClient" layoutX="627.0" layoutY="322.0" prefHeight="26.0" prefWidth="279.0" promptText="Teléfono del cliente" />
+         <Label layoutX="701.0" layoutY="106.0" prefHeight="48.0" prefWidth="124.0" style="-fx-background-color: #bd99d9;" text="   CLIENTE" textFill="WHITE">
+            <font>
+               <Font name="Georgia Pro Black" size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="626.0" layoutY="236.0" text="DNI" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldDNIClient" layoutX="626.0" layoutY="262.0" prefHeight="26.0" prefWidth="278.0" promptText="Dni del cliente" />
+         <Button fx:id="BotonLimpiarCliente" layoutX="594.0" layoutY="525.0" onAction="#limpiarCamposCliente" prefHeight="46.0" prefWidth="171.0" style="-fx-background-color: #8351a8; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="LIMPIAR CAMPOS" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         <TextField fx:id="BuscadorNombre" layoutX="56.0" layoutY="467.0" promptText="Buscar por Nombre" />
+         <TextField fx:id="BuscadorDireccion" layoutX="234.0" layoutY="467.0" promptText="Buscar por Dirección" />
+         <TextField fx:id="BuscadorDNI" layoutX="408.0" layoutY="467.0" promptText="Buscar por Dni" />
+        </AnchorPane>
+    </Tab>
+
+    <Tab fx:id="ProveedoresTab" closable="false" text="Proveedores">
+        <AnchorPane prefHeight="675.0" prefWidth="966.0" style="-fx-background-color: #7e4ea2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+         <ImageView fitHeight="655.0" fitWidth="972.0">
+            <image>
+               <Image url="@Fotos/fondo.jpg" />
+            </image>
+         </ImageView>
+            <TableView fx:id="tablaProveedores" layoutX="36.0" layoutY="101.0" prefHeight="336.0" prefWidth="358.0" style="-fx-background-color: #dac7eb;">
+                <columns>
+               <TableColumn fx:id="colIDProvProve" prefWidth="74.39999008178711" text="IdProv" />
+                    <TableColumn fx:id="colNombreProve" prefWidth="103.99995422363281" text="Nombre" />
+                    <TableColumn fx:id="colDireccionProve" prefWidth="76.79998779296875" text="Dirección" />
+                    <TableColumn fx:id="colTelefonoProve" minWidth="8.0" prefWidth="100.79996337890623" text="Teléfono" />
+                </columns>
+            </TableView>
+
+            <Button fx:id="BotonRegistrarProve" layoutX="229.0" layoutY="525.0" onAction="#registrarProveedor" prefHeight="51.0" prefWidth="187.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="REGISTRAR PROVEEDOR" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
+         <Label layoutX="450.0" layoutY="193.0" text="Nombre" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldNombreProveedor" layoutX="450.0" layoutY="219.0" prefHeight="26.0" prefWidth="190.0" promptText="Nombre del proveedor" />
+         <TextField fx:id="TextFieldDirectProveedor" layoutX="450.0" layoutY="289.0" prefHeight="26.0" prefWidth="191.0" promptText="Nombre del proveedor" />
+         <Label layoutX="450.0" layoutY="263.0" text="Dirección" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="448.0" layoutY="327.0" text="Teléfono" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldTelefonoProveedor" layoutX="448.0" layoutY="353.0" prefHeight="26.0" prefWidth="194.0" promptText="Teléfono del proveedor" />
+         <Label layoutX="448.0" layoutY="121.0" prefHeight="48.0" prefWidth="186.0" style="-fx-background-color: #bd99d9;" text="   PROVEEDORES" textFill="WHITE">
+            <font>
+               <Font name="Georgia Pro Black" size="18.0" />
+            </font>
+         </Label>
+         <Button fx:id="BotonEliminarProve" layoutX="32.0" layoutY="454.0" onAction="#eliminarProveedor" prefHeight="51.0" prefWidth="180.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="ELIMINAR PROVEEDOR" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="BotonEditarProve" layoutX="25.0" layoutY="525.0" onAction="#editarProveedor" prefHeight="51.0" prefWidth="187.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="EDITAR PROVEEDOR" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         <Button fx:id="BotonLimpiarProve" layoutX="228.0" layoutY="457.0" prefHeight="46.0" prefWidth="171.0" style="-fx-background-color: #8351a8; -fx-border-color: white; -fx-border-radius: 15; -fx-background-radius: 15;" text="LIMPIAR CAMPOS" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         <Label layoutX="721.0" layoutY="121.0" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #bd99d9;" text="   CREAR PEDIDO" textFill="WHITE">
+            <font>
+               <Font name="Georgia Pro Black" size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="692.0" layoutY="193.0" text="Nombre" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldNombrePedido" layoutX="692.0" layoutY="219.0" prefHeight="26.0" prefWidth="227.0" promptText="Nombre del pedido" />
+         <Label layoutX="692.0" layoutY="263.0" text="Cantidad" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldCantidadPedido" layoutX="692.0" layoutY="289.0" prefHeight="26.0" prefWidth="228.0" promptText="Cantidad del pedido" />
+         <ComboBox fx:id="ComboSelecProve" layoutX="691.0" layoutY="354.0" prefHeight="26.0" prefWidth="228.0" promptText="Seleccionar Proveedor" />
+         <Label layoutX="692.0" layoutY="327.0" text="Proveedor" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Button fx:id="BotonAgregarPedido" layoutX="716.0" layoutY="411.0" onAction="#agregarPedido" prefHeight="51.0" prefWidth="180.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="AGREGAR PEDIDO" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+        </AnchorPane>
+    </Tab>
+
+    <Tab fx:id="ReportesTab" closable="false" text="Reportes">
+        <AnchorPane style="-fx-background-color: #7e4ea2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+         <ImageView fitHeight="655.0" fitWidth="972.0">
+            <image>
+               <Image url="@Fotos/fondo.jpg" />
+            </image>
+         </ImageView>
+            <Button fx:id="BotonFacturas" layoutX="410.0" layoutY="378.0" onAction="#onBotonFacturasClick" prefHeight="47.0" prefWidth="182.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="FACTURAS" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="BotonInventarioActual" layoutX="407.0" layoutY="258.0" onAction="#onBotonInventarioClick" prefHeight="46.0" prefWidth="188.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="INVENTARIO ACTUAL" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+         <Label layoutX="429.0" layoutY="133.0" prefHeight="48.0" prefWidth="143.0" style="-fx-background-color: #bd99d9;" text="   REPORTES" textFill="WHITE">
+            <font>
+               <Font name="Georgia Pro Black" size="18.0" />
+            </font>
+         </Label>
+        </AnchorPane>
+    </Tab>
+    <Tab fx:id="VentasTab" closable="false" text="Ventas">
+        <AnchorPane style="-fx-background-color: #7e4ea2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+         <ImageView fitHeight="655.0" fitWidth="972.0">
+            <image>
+               <Image url="@Fotos/fondo.jpg" />
+            </image>
+         </ImageView>
+            <TableView fx:id="tablaVentas" layoutX="75.0" layoutY="159.0" prefHeight="330.0" prefWidth="478.0" style="-fx-background-color: #dac7eb;">
+                <columns>
+                    <TableColumn fx:id="coldIdVentas" text="IdVent" />
+                    <TableColumn fx:id="colIdProductosVentas" text="IdProd" />
+               <TableColumn fx:id="colIdProveedoresVentas" text="IdProv" />
+               <TableColumn fx:id="colIdClienteVentas" text="IdClient" />
+                    <TableColumn fx:id="colFechaVentas" text="Fecha" />
+               <TableColumn fx:id="colCantidadVentas" text="Cantidad" />
+                </columns>
+            </TableView>
+
+            <Button fx:id="BotonRegistrarVenta" layoutX="640.0" layoutY="539.0" onAction="#registVenta" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #5a3672; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;" text="REGISTRAR VENTA" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+         <Label layoutX="656.0" layoutY="113.0" prefHeight="48.0" prefWidth="114.0" style="-fx-background-color: #bd99d9;" text="   VENTAS" textFill="WHITE">
+            <font>
+               <Font name="Georgia Pro Black" size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="619.0" layoutY="187.0" text="Producto" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="SeleccionarProductoVentas" layoutX="619.0" layoutY="213.0" prefHeight="26.0" prefWidth="202.0" promptText="Seleccionar Producto" />
+         <Label layoutX="614.0" layoutY="255.0" text="Cliente" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="SeleccionarClienteVentas" layoutX="618.0" layoutY="281.0" prefHeight="26.0" prefWidth="202.0" promptText="Seleccionar Cliente" />
+         <Label layoutX="614.0" layoutY="325.0" text="Proveedor" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="SeleccionarProveedorVentas" layoutX="618.0" layoutY="351.0" prefHeight="26.0" prefWidth="202.0" promptText="Seleccionar Proveedor" />
+         <DatePicker fx:id="DatePickerFechaVentas" layoutX="618.0" layoutY="418.0" prefHeight="26.0" prefWidth="206.0" promptText="Fecha de venta" />
+         <Label layoutX="618.0" layoutY="392.0" text="Fecha" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="TextFieldCantidadVentas" layoutX="619.0" layoutY="481.0" prefHeight="26.0" prefWidth="204.0" promptText="Cantidad de ventas" />
+         <Label layoutX="618.0" layoutY="454.0" text="Cantidad" textFill="WHITE">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+        </AnchorPane>
+    </Tab>
+</TabPane>
